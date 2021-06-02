@@ -34,7 +34,7 @@ public class Bertrand {
         for(int i = 2; i <= Math.sqrt(prime.length); i++) {
             if(prime[i]) continue;
 
-            for(int j = i * i; j <= prime.length; j += i) {
+            for(int j = i * i; j < prime.length; j += i) {
                 prime[j] = true;
             }
 
