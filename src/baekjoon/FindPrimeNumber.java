@@ -34,8 +34,11 @@ public class FindPrimeNumber {
         prime[0] = prime[1] = true;
 
         for(int i = 2; i <= Math.sqrt(prime.length); i++) {
+
+            // 아직 2가 false니깐 2는 소수.
             if(prime[i]) continue;
 
+            //i=2부터 j값을 도출해서 i의 배수 값들은 다 소수가 아닌걸로.
             for(int j = i * i; j < prime.length; j += i) {
                 prime[j] = true;
             }
