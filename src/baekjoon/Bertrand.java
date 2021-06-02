@@ -19,7 +19,7 @@ public class Bertrand {
             int N = Integer.parseInt(br.readLine());
             if(N == 0) break;
 
-            for(int i = N; i < 2 * N; i++) {
+            for(int i = N + 1; i <= 2 * N; i++) {
                 if(!prime[i]) cnt++;
             }
             sb.append(cnt).append('\n');
