@@ -29,6 +29,10 @@ public class BinarySearch {
         int idx = Arrays.binarySearch(x, ky);    //배열 x에서 키 값이 ky인 인덱스를 검색
 
         if(idx < 0) {
+            //검색에 실패할 경우
+            //삽입 포인트는 검색할 값보다 큰 요소 중 첫 번째 요소의 인덱스.
+            //삽입 포인트를 x라고 할 때, binarySearch메소드는 -x-1을 반환함.
+            System.out.println("삽입 포인트:: " + idx);
             System.out.println("그 값의 요소가 없습니다.");
         }
         else {
