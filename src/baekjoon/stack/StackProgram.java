@@ -1,11 +1,11 @@
-package baekjoon;
+package baekjoon.stack;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Stack {
+public class StackProgram {
     public static int ptr = 0;  // 현재 쌓여있는 수
     public static int stk[];
 
