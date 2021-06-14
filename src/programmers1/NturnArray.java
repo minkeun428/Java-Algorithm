@@ -29,6 +29,6 @@ public class NturnArray {
             answer[i] = Integer.parseInt(ss[i]);
         }
 
-        return answer;
+        return answer; 
     }
 }
