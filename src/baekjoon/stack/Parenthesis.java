@@ -24,8 +24,6 @@ public class Parenthesis {
     static String solve(String str) {
         Stack<Character> stack = new Stack();
 
-
-
         for(int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
 
