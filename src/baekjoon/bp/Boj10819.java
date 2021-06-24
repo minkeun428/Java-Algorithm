@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Boj10819 {
+    static int max = 0;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
@@ -19,35 +20,22 @@ public class Boj10819 {
         }
         // 정렬을 해야 대소 비교 순열의 효율성을 높여준다.
         Arrays.sort(arr);
-        int answer = 0;
-        do {
-            answer = Math.max(answer, getSum(arr));
-        } while(nextPermutation(arr));
+        perm(arr, 0, N);
 
-        System.out.println(answer);
+        System.out.println(max);
     }
 
     // 모든 순열 배열 만들기
-    public static boolean nextPermutation(int[] arr) {
-        int i = arr.length - 1;
-        while(i > 0 && arr[i - 1] >= arr[i]) {
-            i--;
+    public static void perm(int[] arr, int depth, int n) {
+        if(depth == n) {
+            getSum(arr, n);
+            return;
         }
-        if(i <= 0) return false;
-
-        int j = arr.length - 1;
-        while(arr[j] <= arr[i - 1]) {
-            j--;
+        for(int i = depth; i < n; i++) {
+            swap(arr, i, depth);
+            perm(arr, depth + 1, n);
+            swap(arr, i ,depth);
         }
-        swap(arr, i - 1, j);
-        j = arr.length - 1;
-        while(i < j) {
-            swap(arr, i, j);
-            i++;
-            j--;
-        }
-
-        return true;
     }
 
     // 인덱스 자리 바꾸기 함수
@@ -58,13 +46,14 @@ public class Boj10819 {
     }
 
     // 차이 합 리턴 함수
-    public static int getSum(int[] arr) {
+    public static void getSum(int[] arr, int n) {
         int sum = 0;
-        for(int i = 0; i < arr.length - 1; i++) {
-            sum += Math.abs(arr[i] - arr[i + 1]);
+        for(int i = 2; i <= n; i++) {
+            sum += Math.abs(arr[i - 2] - arr[i - 1]);
         }
-
-        return sum;
+        if(max < sum) {
+            max = sum;
+        }
     }
 
 }
