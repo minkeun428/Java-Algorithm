@@ -16,6 +16,7 @@ public class Boj2667 {
     static ArrayList<Integer> result;    // 단지 집 수 저장
     static boolean[][] check;    // 방문 체크
 
+    // 재귀로 푼 BFS
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         N = Integer.parseInt(br.readLine());    // 지도의 크기
