@@ -33,41 +33,41 @@ public class Boj2178 {
             }
         }
 
-        System.out.println(bfs());
+        bfs(0, 0);
+        System.out.println(arr[N - 1][M - 1]);
     }
 
-    static int bfs() {
-        Queue<Dot> q = new LinkedList<>();
-        q.add(new Dot(0, 0));
-        int count = 1;
+    static void bfs(int row, int col) {
+        Queue<Dot> q = new LinkedList();
+        q.offer(new Dot(row, col));
+        chk[row][col] = true;
 
         while(!q.isEmpty()) {
-            int size = q.size();
-            count++;
+            Dot d = q.poll();
 
-            for(int t = 0; t < size; t++) {
-                Dot d = q.poll();   //가장 먼저 넣은거 꺼내고 반환
+            for (int i = 0; i < 4; i++) {
+                int ddx = d.x + dx[i];
+                int ddy = d.y + dy[i];
 
-                for (int i = 0; i < 4; i++) {
-                    int ddx = d.x + dx[i];
-                    int ddy = d.y + dy[i];
+                // (0,5)배열이 돌 땐 여기서 걸려서 continue -> (1,4)배열 탐색으로 감!
+                if (!isValid(ddx, ddy) || chk[ddx][ddy] || arr[ddx][ddy] == 0) {
+                    continue;
+                }else {
+                    //count 누적
+                    arr[ddx][ddy] = arr[d.x][d.y] + 1;
 
-                    if (isValid(ddx, ddy)) {
-                        if (N - 1 == ddx && M - 1 == ddy) return count;
-                        if (arr[ddx][ddy] == 1 && !chk[ddx][ddy]) {
-                            //다음에 방문할 좌표를 큐에 넣는다.
-                            q.add(new Dot(ddx, ddy));
+                    //다음에 방문할 좌표를 큐에 넣는다.
+                    q.offer(new Dot(ddx, ddy));
 
-                            //다음 좌표는 방문했음으로 표시
-                            chk[ddx][ddy] = true;
-                        }
-                    }
+                    //다음 좌표는 방문했음으로 표시
+                    chk[ddx][ddy] = true;
                 }
             }
         }
-        return 0;
+
     }
 
+    // 4방향 확인 중에, -1이거나 NxM크기의 범위를 넘어선 안된다.
     static boolean isValid(int x, int y) {
         if(x < 0 || x >= N || y < 0 || y >= M) {
             return false;
