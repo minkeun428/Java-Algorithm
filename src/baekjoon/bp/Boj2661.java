@@ -38,8 +38,8 @@ public class Boj2661 {
         }
 
         for(int i = start; i <= end; i++) {
-            if(chkCondition(str + i)) {
-                backTracking(str + i);
+            if(chkCondition(str + i)) { // 1,2,3을 하나씩 붙인 수들이 좋은 수열이라면,
+                backTracking(str + i);  // N개가 될 때까지 반복.
             }
         }
     }
@@ -49,11 +49,11 @@ public class Boj2661 {
         // ex. 1212가 들어올 경우
         // 한글자씩 비교했을 때는 유효하지만
         // 두글자씩 비교 했을 경우 12 12가 같으므로 유효하지 않음.
-        for(int i = 1; i <= len / 2; i++) {
+        for(int i = 1; i <= len / 2; i++) { // 마지막 들어온 숫자가 그 앞에 1개와 동일한지, 마지막 2개와 그 앞 2개가 동일한지 ....
             String front_str = str.substring(str.length() - i - i, str.length() - i);
             String rear_str = str.substring(str.length() - i);
 
-            if(front_str.equals(rear_str)) {
+            if(front_str.equals(rear_str)) {   //동일하면 나쁜 수열
                 return false;
             }
         }
