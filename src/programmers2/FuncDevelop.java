@@ -26,13 +26,15 @@ public class FuncDevelop {
             if(prevFunc >= curFunc) {
                 num++;
             } else {
-                list.add(num);
+                System.out.println("num::" + num);
+                list.add(num);      // 다음 큐가 같은 배포일이 아닐 때, 카운트한 num 넣어주기
                 num = 1;            // num 초기화
                 prevFunc = curFunc; // preFunc 갱신
             }
         }
 
-        list.add(num);
+        System.out.println("num::" + num);
+        list.add(num);  // 큐가 비었을 때, 마지막 num추가
         answer = new int[list.size()];
         for(int i = 0; i < list.size(); i++) {
             answer[i] = list.get(i);
