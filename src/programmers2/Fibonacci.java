@@ -12,6 +12,7 @@ public class Fibonacci {
         int num2 = 1;
         int sum = 1;
 
+        // (A+B) % C = ((A % C) + (B % C)) % C
         for(int i = 0; i < n; i++) {
             sum = (num1 + num2) % 1234567;
             num1 = (num2) % 1234567;
