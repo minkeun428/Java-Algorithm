@@ -2,6 +2,7 @@ package leetcode;
 
 import java.util.Stack;
 
+// https://leetcode.com/problems/valid-parentheses/submissions/
 public class ValidParentheses {
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack();
