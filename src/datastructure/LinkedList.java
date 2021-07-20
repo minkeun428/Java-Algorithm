@@ -1,5 +1,6 @@
 package datastructure;
 
+//https://yaboong.github.io/data-structures/2018/02/08/linked-list-1-basic/
 public class LinkedList {
     Node head;      //맨 앞 참조 변수(포인터), linkedList의 진입점
     Node current;   //현재 선택한 노드를 가리킴
@@ -43,7 +44,7 @@ public class LinkedList {
     }
 
     //3. 지정한 값을 가지고 있는 node를 삭제하는 메소드
-    public void deleteWithValue(int data) {
+    public void deleteValue(int data) {
         if(head == null) return; //비어 있으면 리턴
 
         Node current = head;     //head부터 시작한다.
