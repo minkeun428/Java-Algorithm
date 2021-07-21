@@ -10,18 +10,19 @@ import java.util.List;
 // post : children self
 public class TreePreorderTraversal {
     public List<Integer> preorder(Node root) {
-        List<Integer> ret = new ArrayList();
-        traverse(root, ret);
+        List<Integer> list = new ArrayList();
+        traverse(root, list);
 
-        return ret;
+        return list;
     }
 
-    public void traverse(Node root, List<Integer> ret) {
+    //return List 들고 다니기
+    public void traverse(Node root, List<Integer> list) {
         if(root == null) return;
 
-        ret.add(root.val);
-        for(Node child : root.children) {
-            traverse(child, ret);
+        list.add(root.val);             //self 넣기
+        for(Node c : root.children) {   //재귀함수로 root에 children 반복 넣기
+            traverse(c, list);
         }
     }
 
