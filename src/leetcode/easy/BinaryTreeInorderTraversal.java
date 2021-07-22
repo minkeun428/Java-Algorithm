@@ -4,8 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-//inorder(전위)순회
-//left self right
+
+/**
+ * https://leetcode.com/problems/binary-tree-inorder-traversal/solution/
+ * inorder(전위)순회
+ * left self right
+ */
 public class BinaryTreeInorderTraversal {
     //트리 노드 클래스 정의
     public static class TreeNode {
