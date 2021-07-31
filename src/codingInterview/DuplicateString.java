@@ -1,8 +1,9 @@
-package codingInteview;
+package codingInterview;
 
 import java.util.HashMap;
 import java.util.Map;
 
+//문자열 1.1
 public class DuplicateString {
 
     //방법 1
