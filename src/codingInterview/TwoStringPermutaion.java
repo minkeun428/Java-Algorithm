@@ -1,7 +1,8 @@
-package codingInteview;
+package codingInterview;
 
 import java.util.Arrays;
 
+//문자열 1.2
 public class TwoStringPermutaion {
     //방법 1
     public boolean permutation1(String s1, String s2) {
