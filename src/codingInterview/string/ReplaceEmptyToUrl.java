@@ -1,4 +1,4 @@
-package codingInterview;
+package codingInterview.string;
 
 /**
  * StringBuilder는 ArrayList와 같습니다.
