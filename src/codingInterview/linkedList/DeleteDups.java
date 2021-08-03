@@ -12,6 +12,7 @@ public class DeleteDups {
         }
     }
 
+    //해법 1
     void deleteDups(Node n) {
         HashSet set = new HashSet();
         Node current = null;    //현재 위치 참조 객체
@@ -24,6 +25,22 @@ public class DeleteDups {
                 current = n;        //현재 위치 갱신해주고
             }
             n = n.next;     //한 칸 이동
+        }
+    }
+
+    //해법2
+    void deleteDupsWithRunner(Node head) {
+        Node current = head;
+        while(current != null) {
+            Node runner = current;
+            while(runner.next != null) {
+                if(runner.next.data == current.data) {
+                    runner.next = runner.next.next;
+                } else {
+                    runner = runner.next;
+                }
+                current = current.next;
+            }
         }
     }
 
