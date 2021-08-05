@@ -1,16 +1,11 @@
 package codingInterview.linkedList;
 
-public class DeleteNode {
-    class Node {
-        int data;
-        Node next = null;
-        public Node(int d) {
-            this.data = d;
-        }
-    }
+import leetcode.easy.ListNode;
 
-    Node deleteNode(Node head, int d) {
-        Node n = head;
+public class DeleteNode {
+
+    ListNode deleteNode(ListNode head, int d) {
+        ListNode n = head;
         if(n.data == d) {
             return head.next;       //head를 움직인다.
         }

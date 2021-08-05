@@ -6,20 +6,12 @@ package leetcode.easy;
  */
 public class ConvertBinaryNumberLinkedListtoInteger {
     public int getDecimalValue(ListNode head) {
-        int num = head.val;
+        int num = head.data;
         while(head.next != null) {
-            num = num * 2 + head.next.val;
+            num = num * 2 + head.next.data;
             head = head.next;
         }
         return num;
     }
-
-    public static class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int val) {
-          this.val = val;
-      }
-   }
 
 }

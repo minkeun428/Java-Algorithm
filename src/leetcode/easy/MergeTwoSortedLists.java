@@ -2,15 +2,6 @@ package leetcode.easy;
 
 // https://leetcode.com/problems/merge-two-sorted-lists/description/
 public class MergeTwoSortedLists {
-    class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-        }
-        ListNode(){}
-    }
-
     //l1 : [1, 2, 4]
     //l2 : [1, 3, 4]
     //승지니어 풀이

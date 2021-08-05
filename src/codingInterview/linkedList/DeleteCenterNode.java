@@ -1,20 +1,14 @@
 package codingInterview.linkedList;
 
+import leetcode.easy.ListNode;
+
 public class DeleteCenterNode {
-    class Node {
-        int data;
-        Node next = null;
 
-        public Node(int d) {
-            this.data = d;
-        }
-    }
-
-    boolean deleteNode(Node n) {
+    boolean deleteNode(ListNode n) {
         if(n == null || n.next == null) {
             return false;
         }
-        Node next = n.next;
+        ListNode next = n.next;
         n.data = next.data;
         n.next = next.next;
         return true;
