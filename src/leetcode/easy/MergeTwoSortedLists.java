@@ -11,7 +11,7 @@ public class MergeTwoSortedLists {
 
         while(l1 != null || l2 != null) {
             //pick from l1
-            if(l2 == null || (l1 != null && l1.val < l2.val)) {
+            if(l2 == null || (l1 != null && l1.data < l2.data)) {
                 if(ret == null) {
                     ret = l1;
                 }else {
@@ -45,7 +45,7 @@ public class MergeTwoSortedLists {
         ListNode curr_node = result_node;     //내가 지정한 갓이 head로
 
         while(l1 != null && l2 != null) {
-            if(l1.val < l2.val) {
+            if(l1.data < l2.data) {
                 //cur의 첫노드는 l1을 가리켜야 함
                 curr_node.next = l1;
                 //l1은 뒤로 이동
